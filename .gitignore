@@ -46,4 +46,6 @@ language.settings.xml
 *.launch
 
 # ignore contents of build directory
-build/**
+build/*.bin
+build/*.elf
+
