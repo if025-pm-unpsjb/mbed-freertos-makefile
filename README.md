@@ -1,5 +1,5 @@
 # mbed-blinky-makefile
-Programa de prueba para la placa mbed LPC1768, que hace titilar periódicamente el LED 1 de la placa. El proyecto esta basado en Make, y utiliza el [mbed SDK](https://developer.mbed.org/users/mbed_official/code/mbed/) (mbed OS 2).
+Programa de prueba base para la placa mbed LPC1768, con FreeRTOS. El proyecto esta basado en Make, y utiliza el [mbed SDK](https://developer.mbed.org/users/mbed_official/code/mbed/) (mbed OS 2).
 
 A continuación como se describe como importarlo en Eclipse y ejecutarlo en la placa.
 
