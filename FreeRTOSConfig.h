@@ -167,3 +167,6 @@ standard names. */
 extern void vConfigureTimerForRunTimeStats( void );
 #define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() vConfigureTimerForRunTimeStats()
 #define portGET_RUN_TIME_COUNTER_VALUE() LPC_TIM1->TC
+
+/* Integrates the Tracealyzer recorder with FreeRTOS */
+#include "trcRecorder.h"
