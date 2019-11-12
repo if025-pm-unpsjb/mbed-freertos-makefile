@@ -2,7 +2,7 @@
 
 BUILD_DIR = ./build
 
-PROJ = blink
+PROJ = tp5
 
 OBJECTS += ./main.o
 
