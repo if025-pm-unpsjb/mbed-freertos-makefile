@@ -6,8 +6,16 @@ void thread1 (void*);
 
 int main()
 {
+	// Initializes the trace recorder, but does not start the tracing.
+	vTraceEnable( TRC_INIT );
+
     xTaskCreate(thread1, "t1", 128, NULL, configMAX_PRIORITIES - 1, NULL);
+
+	// Starts the tracing.
+	vTraceEnable( TRC_START );
+
     vTaskStartScheduler();
+
     for( ;; );
 }
 
