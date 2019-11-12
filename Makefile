@@ -5,6 +5,7 @@ BUILD_DIR = ./build
 PROJ = tp5
 
 OBJECTS += ./main.o
+OBJECTS += ./util.o
 
 FREERTOS_OBJECTS += ./freertos/tasks.o
 FREERTOS_OBJECTS += ./freertos/list.o
