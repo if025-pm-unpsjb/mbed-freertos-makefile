@@ -59,20 +59,22 @@ LINKER_SCRIPT = ./mbed/TARGET_LPC1768/TOOLCHAIN_GCC_ARM/LPC1768.ld
 CPU += -mcpu=cortex-m3 
 CPU += -mthumb
 
-CC_FLAGS += $(CPU) 
-CC_FLAGS += -c
-CC_FLAGS += -g
-CC_FLAGS += -fno-common
-CC_FLAGS += -fmessage-length=0
-CC_FLAGS += -Wall
-CC_FLAGS += -fno-exceptions
-CC_FLAGS += -ffunction-sections
-CC_FLAGS += -fdata-sections
-CC_FLAGS += -fomit-frame-pointer
+C_FLAGS += $(CPU) 
+C_FLAGS += -c
+C_FLAGS += -g
+C_FLAGS += -fno-common
+C_FLAGS += -fmessage-length=0
+C_FLAGS += -Wall
+C_FLAGS += -fno-exceptions
+C_FLAGS += -ffunction-sections
+C_FLAGS += -fdata-sections
+C_FLAGS += -fomit-frame-pointer
+C_FLAGS += -include mbed_config.h
+C_FLAGS += -MMD
+C_FLAGS += -MP
+
+CC_FLAGS = $(C_FLAGS)
 CC_FLAGS += -fno-rtti
-CC_FLAGS += -include mbed_config.h
-CC_FLAGS += -MMD
-CC_FLAGS += -MP
 
 CC_SYMBOLS += -DTARGET_LPC1768
 CC_SYMBOLS += -DTARGET_M3
@@ -121,7 +123,7 @@ clean:
 	
 .c.o:
 	+@echo "Compile: $<"
-	@$(CC) $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu99  $(INCLUDE_PATHS) -o $@ $<
+	@$(CC) $(C_FLAGS) $(CC_SYMBOLS) -std=gnu99  $(INCLUDE_PATHS) -o $@ $<
 
 .cpp.o:
 	+@echo "Compile: $<"
